@@ -22,7 +22,7 @@ export const getAppointmentsController = async(req:Request, res:Response ):Promi
 
 
 
-export const getAppointmentsByIdController = async(req:Request, res:Response ):Promise<void> => {
+export const getAppointmentsByIdController = async(req:Request<{id:string}>, res:Response ):Promise<void> => {
     const {id} = req.params;
     try {
         const response=  await getAppointmentsByIdService(id);
@@ -61,7 +61,7 @@ export const scheduleAppointmentController = async(req:Request<unknown,unknown, 
 
 
 
-export const cancelAppointmentController = async(req:Request, res:Response ):Promise<void> => {
+export const cancelAppointmentController = async(req:Request<{id:string}>, res:Response ):Promise<void> => {
     const {id} = req.params;
     try {
         const response= await cancelAppointmentService(id);

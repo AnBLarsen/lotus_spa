@@ -21,7 +21,7 @@ export const getUsersController = async(req:Request, res:Response ):Promise<void
     }
 }
 
-export const getUserByIdController = async(req:Request, res:Response ): Promise<void>=>{
+export const getUserByIdController = async(req:Request<{id:string}>, res:Response ): Promise<void>=>{
     const {id} = req.params;
     try {
         const response =  await getUserByIdService(id);

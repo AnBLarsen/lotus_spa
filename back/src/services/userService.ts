@@ -33,9 +33,7 @@ export const registerService = async(user:UserRegisterDto):Promise<User> =>{
         
         const newUser: User = entityManager.create(User, {
             name: user.name,
-            email:user.email,
-            birthdate: user.birthdate,
-            nDni: user.nDni,
+            email: user.email,
             credential: userCredentials
         })
         return await entityManager.save(newUser)
@@ -70,8 +68,6 @@ export const loginService = async (user: UserLoginDto): Promise<UserLogInSuccess
             id: userFound.id,
             name: userFound.name,
             email: userFound.email,
-            birthdate: userFound.birthdate,
-            nDni: userFound.nDni,
         },
     };
     

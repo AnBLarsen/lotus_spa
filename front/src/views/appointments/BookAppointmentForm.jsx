@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { heroContent } from "../../helpers/heros";
 import HeroSection from "../../components/Hero/HeroSection";
-import Footer from "../../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { UsersContext } from "../../context/UserContext";
 import { ClipLoader } from "react-spinners"; 
@@ -59,12 +58,12 @@ const BookAppointmentForm = () => {
 
     <>
 
-      <div className="flex flex-col min-h-screen bg-[#dbf3f060]">
-        <HeroSection image={hero.image} text={hero.text} />
+      <div className="flex flex-col flex-1 bg-[#dbf3f060]">
+        {/* <HeroSection image={hero.image} text={hero.text} /> */}
         
 
-        <div className="flex-grow">
-          <div className="max-w-md mx-auto mt-10 mb-10 p-6 bg-[#ffffffc7] shadow-lg rounded-xl">
+        <div className="flex flex-1 justify-center items-center px-4 py-6">
+          <div className="w-full max-w-md p-6 bg-[#ffffffc7] shadow-lg rounded-xl">
             <h2 className="text-2xl font-semibold text-center mb-6">My Next Appointment</h2>
 
             <Formik
@@ -131,7 +130,7 @@ const BookAppointmentForm = () => {
 
         </div>
 
-        <Footer/>
+        
 
       </div>
     </>

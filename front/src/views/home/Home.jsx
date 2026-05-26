@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
    
@@ -7,7 +6,7 @@ const Home = () => {
     return (
       <>
       
-        <section className="relative h-screen w-full flex items-center justify-center">
+        <section className="relative -mx-4 h-[calc(100vh-4rem)] flex items-center justify-center">
           <video 
             autoPlay 
             loop 
@@ -31,7 +30,7 @@ const Home = () => {
             </button>
           </div>
         </section>
-        <Footer/>
+        
       </>
     );
 };

@@ -22,26 +22,34 @@ const Appointment = ({ id, date, time, description, status }) => {
     return(
 
 
-        <div className="bg-[#ffffffb9]  rounded-2xl p-6 h-60 flex-col flex-between">
-            <div className="h-40 space-y-1">
-                <p><strong>Appointment #:</strong> {id}</p>
-                <p><FaClipboard className="inline mr-2 text-[#e4a1a0]" /><strong>Description:</strong>  {description}</p>
-                <p><FaCalendarAlt className="inline mr-2 text-[#e4a1a0]" /><strong>Date:</strong>  {date}</p>
-                <p><FaClock className="inline mr-2 text-[#e4a1a0]" /><strong>Time:</strong>  {time}</p>
+        <div className="bg-[#f6e1e1] rounded-2xl p-6 flex flex-col justify-between w-full sm:w-72">
+            <div className="space-y-2 mb-4 text-gray-700">
+                <div>
+                    <p className='flex items-center font-bold'><FaClipboard className=" mr-2 text-[#e4a1a0]" />Appoitment</p>
+                    <p>{description}</p>
+                </div>
+                <div>
+                    <p className='flex items-center font-bold'><FaCalendarAlt className="mr-2 text-[#e4a1a0]" />Date</p>
+                    <p>{date}</p>
+                </div>
+                <div>
+                    <p className='flex items-center font-bold'><FaClock className="inline mr-2 text-[#e4a1a0]" />Time</p>
+                    <p>{time}</p>
+                </div>
                 <p><strong>Status:</strong> {status === "cancelled" ? (
                     <span className="text-red-700 font-bold">Cancelled</span>
                 ) : (
-                    <span className="text-emerald-700 font-bold">Active</span>
+                    <span className="text-emerald-700 font-bold">Booked</span>
                 )}</p>
             </div>
 
-            <div className="mb-6">
+            <div className="flex justify-baseline">
                 <button 
-                    className="flex items-center bg-[#e4a1a0c4] text-white px-4 py-1 rounded hover:bg-[#f5aaa8] cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed disabled:text-gray-700"
+                    className="w-full flex items-center text-gray-700 py-1 border border-red-700 px-4 rounded hover:text-gray-900 cursor-pointer disabled:hidden"
                     onClick={handleCancel}
                     disabled={status === "cancelled"} 
                 >
-                    <FaTimesCircle className="mr-2" />
+                    <FaTimesCircle className="mr-2 text-red-700 disabled:text-gray-700" />
                     Cancel Appointment
                 </button>
             </div>

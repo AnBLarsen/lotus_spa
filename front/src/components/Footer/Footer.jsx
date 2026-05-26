@@ -3,7 +3,7 @@ import { faFacebook, faInstagram, faTwitter } from "@fortawesome/free-brands-svg
 
 export default function Footer() {
   return (
-    <footer className="=  bg-[#779e97a8] text-white pt-3 pb-3">
+    <footer className="bg-[#779e97a8] text-white pt-3 pb-3">
       
         <div className="container mx-auto px-6 text-center">
             <h2 className="text-2xl font-bold">LOTUS</h2>

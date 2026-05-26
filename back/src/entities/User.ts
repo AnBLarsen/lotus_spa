@@ -13,12 +13,6 @@ export class User{
     @Column({type: "varchar", length: 100, unique: true, nullable:false})
     email: string
 
-    @Column({type:"date", nullable:false})
-    birthdate: Date
-
-    @Column({type:"integer", unique: true, nullable:false})
-    nDni: number
-    
     @OneToOne(() => Credential, { cascade: true })
     @JoinColumn()
     credential: Credential

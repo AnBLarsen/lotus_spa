@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 
 export const validateUserRegistration= (req: Request, res: Response, next: NextFunction):void=> {
     
-    const inputFields: string[] = ["birthdate", "email", "nDni", "name", "password", "username"]
+    const inputFields: string[] = ["email", "name", "password", "username"]
 
     const filteredInputs: string[] = inputFields.filter(inputs => !req.body[inputs])
 

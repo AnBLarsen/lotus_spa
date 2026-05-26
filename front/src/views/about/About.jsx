@@ -1,4 +1,3 @@
-import Footer from "../../components/Footer/Footer";
 import { heroContent } from "../../helpers/heros";
 import HeroSection from "../../components/Hero/HeroSection";
 
@@ -8,13 +7,13 @@ export default function About() {
     return (
 
         <>
-            <div className="flex flex-col min-h-screen">
+            <div className="flex flex-col">
 
 
                 <HeroSection image={hero.image} text={hero.text} />        
-                <section className=" flex-grow bg-[#f5eee6] text-gray-800 py-16 px-6">
+                <section className=" flex-grow text-gray-800 py-16 px-6">
                     <div className="container mx-auto max-w-5xl text-center">
-                        <h2 className="text-4xl font-bold  text-gray-700">A sanctuary of relaxation and rejuvenation.</h2>
+                        <h2 className="text-2xl md:text-4xl font-bold  text-gray-700">A sanctuary of relaxation and rejuvenation.</h2>
                     
                     </div>
                     
@@ -55,7 +54,7 @@ export default function About() {
                     </div>
                 </section>
 
-                <Footer/>
+                
             </div>
         </>
 

@@ -7,6 +7,7 @@ import MyAppointments from './views/appointments/MyAppointments';
 import BookAppointmentForm from './views/appointments/BookAppointmentForm';
 import Home from './views/home/Home';
 import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 import RegisterForm from './views/Register/RegisterForm';
 import LoginForm from './views/login/LoginForm';
 import About from './views/about/About';
@@ -32,29 +33,32 @@ function App() {
 
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen bg-[#faf5f1]">
       <Toaster position="bottom-center" />
       <NavBar />
-      <Routes>
-        
-        <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
-        <Route path="/services" element={<Services />}/>
-        <Route path="/login" element={<LoginForm />}/>
-        <Route path="/register" element={<RegisterForm />}/>
+      <main className="w-full px-4 flex-1 flex flex-col">
+        <Routes>
 
-        
-        {user && (
-          <>
-            <Route path="/myappointments" element={<MyAppointments />}/>
-            <Route path="/book-appointment" element={<BookAppointmentForm />}/>
-          </>
-        )}
+          <Route path="/" element={<Home />}/>
+          <Route path="/about" element={<About />}/>
+          <Route path="/services" element={<Services />}/>
+          <Route path="/login" element={<LoginForm />}/>
+          <Route path="/register" element={<RegisterForm />}/>
 
-        
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </>
+
+          {user && (
+            <>
+              <Route path="/myappointments" element={<MyAppointments />}/>
+              <Route path="/book-appointment" element={<BookAppointmentForm />}/>
+            </>
+          )}
+
+
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
