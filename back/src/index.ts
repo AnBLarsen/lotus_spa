@@ -1,8 +1,25 @@
+// Catch anything that slips through before the process exits
+process.on("uncaughtException", (err) => {
+    console.error("[uncaughtException]", err);
+    process.exit(1);
+});
+
+process.on("unhandledRejection", (reason) => {
+    console.error("[unhandledRejection]", reason);
+    process.exit(1);
+});
+
 import { PORT, BACKEND_URL } from "./config/envs";
 import server from "./server";
 import "reflect-metadata";
 import { AppDataSource } from "./config/ data-source";
 
+console.log("Starting server...");
+console.log("DB_HOST:", process.env.DB_HOST ? "set" : "MISSING");
+console.log("DB_NAME:", process.env.DB_NAME ? "set" : "MISSING");
+console.log("DB_USERNAME:", process.env.DB_USERNAME ? "set" : "MISSING");
+console.log("DB_PASSWORD:", process.env.DB_PASSWORD ? "set" : "MISSING");
+console.log("DB_SSL:", process.env.DB_SSL);
 
 AppDataSource.initialize()
 
@@ -15,7 +32,8 @@ AppDataSource.initialize()
         })
     })
     .catch((err) => {
-        console.log(err);
+        console.error("[DB init failed]", err);
+        process.exit(1);
     })
 
 
