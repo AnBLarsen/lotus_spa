@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: lotus-spa-backend
+    runtime: node
+    rootDir: .
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: DB_SYNC
+        value: "false"
+      - key: DB_DROP
+        value: "false"
+      - key: DB_LOGGING
+        value: "false"
+      # Need to set these manually in my Render dashboard:
+      # - DB_HOST
+      # - DB_PORT
+      # - DB_USERNAME
+      # - DB_PASSWORD
+      # - DB_NAME
+      # - BACKEND_URL  ← Render public URL, e.g. https://lotus-spa-backend.onrender.com

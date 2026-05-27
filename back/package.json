@@ -24,7 +24,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
-    "start": "nodemon"
+    "start": "nodemon",
+    "start:prod": "node dist/index.js"
   },
   "overrides": {
     "tar": "^7.5.15"
