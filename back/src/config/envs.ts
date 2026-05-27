@@ -29,3 +29,5 @@ export const DB_DROP: boolean = process.env.DB_DROP ? process.env.DB_DROP === "t
 
 export const BACKEND_URL: string | undefined = process.env.BACKEND_URL
 
+export const DB_SSL: boolean = process.env.DB_SSL === "true"
+
